@@ -235,6 +235,63 @@ document.querySelectorAll('.btn-details').forEach(button => {
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
+  // ─── Fonction pour créer un mailto: prérempli ───
+  function createMailtoLink() {
+    const nom = document.getElementById('nom').value || 'Non renseigné';
+    const telephone = document.getElementById('telephone').value || 'Non renseigné';
+    const email = document.getElementById('email').value || 'Non renseigné';
+    const service = document.getElementById('service').value || 'Non renseigné';
+    const message = document.getElementById('message').value || 'Non renseigné';
+    
+    const emailBody = `
+NOUVEAU MESSAGE DE CONTACT — TECHBURK
+=====================================
+
+Nom          : ${nom}
+Téléphone    : ${telephone}
+Email        : ${email}
+Service      : ${service}
+Message      : 
+${message}
+
+=====================================
+Envoyé depuis le formulaire de contact
+    `.trim();
+    
+    const mailtoLink = `mailto:lamiendonaldo179@gmail.com?subject=[TechBurk] Nouveau message de contact de ${encodeURIComponent(nom)}&body=${encodeURIComponent(emailBody)}`;
+    return mailtoLink;
+  }
+
+  // ─── Bouton fallback "Envoyer par email" ───
+  const emailFallbackBtn = document.getElementById('emailFallbackBtn');
+  if (emailFallbackBtn) {
+    emailFallbackBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Vérifier que les champs obligatoires sont remplis
+      if (!document.getElementById('nom').value) {
+        alert('Veuillez remplir votre nom');
+        return;
+      }
+      if (!document.getElementById('telephone').value) {
+        alert('Veuillez remplir votre téléphone');
+        return;
+      }
+      if (!document.getElementById('service').value) {
+        alert('Veuillez choisir un service');
+        return;
+      }
+      if (!document.getElementById('message').value) {
+        alert('Veuillez remplir votre message');
+        return;
+      }
+      
+      // Ouvrir le client mail avec le formulaire prérempli
+      window.location.href = createMailtoLink();
+    });
+  }
+
+  // ─── Soumission du formulaire ───
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
