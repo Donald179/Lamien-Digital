@@ -24,7 +24,7 @@ class TechBurkMailerSMTP {
     ) {
         $this->admin_email = $admin_email;
         $this->site_name = $site_name;
-        $this->smtp_user = $smtp_user || $admin_email;
+        $this->smtp_user = $smtp_user ?: $admin_email;
         $this->smtp_pass = $smtp_pass;
         $this->log_file = dirname(__FILE__) . '/../logs/emails.log';
         
