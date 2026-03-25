@@ -54,7 +54,6 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#apropos" class="nav-link">À propos</a>
         <a href="#boutique" class="nav-link">Boutique</a>
-        <a href="#contact" class="nav-link">Contact</a>
         <a href="https://wa.me/22655757299?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20informatique" target="_blank" class="btn-nav-whatsapp">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
@@ -599,56 +598,6 @@
             <i class="fab fa-whatsapp"></i> Discuter maintenant
           </a>
         </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form-wrap" data-aos data-delay="200">
-          <form id="contactForm" action="php/contact-v2.php" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nom">Votre nom *</label>
-                <input type="text" id="nom" name="nom" placeholder="Ex : Moussa Traoré" required />
-              </div>
-              <div class="form-group">
-                <label for="telephone">Téléphone *</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="+226 XX XX XX XX" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email (optionnel)</label>
-              <input type="email" id="email" name="email" placeholder="votre@email.com" />
-            </div>
-            <div class="form-group">
-              <label for="service">Service souhaité *</label>
-              <select id="service" name="service" required>
-                <option value="">-- Choisir un service --</option>
-                <option value="maintenance">Maintenance informatique</option>
-                <option value="reparation">Réparation d'ordinateur</option>
-                <option value="installation">Installation logiciel/système</option>
-                <option value="vente">Achat matériel</option>
-                <option value="diagnostic">Diagnostic informatique</option>
-                <option value="reseau">Réseau & Sécurité</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Décrivez votre problème *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre problème ou ce dont vous avez besoin..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-              <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le message</span>
-              <span class="btn-loading" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i> Envoi...</span>
-            </button>
-            <button type="button" class="btn btn-outline btn-full" id="emailFallbackBtn" style="margin-top: 10px;">
-              <i class="fas fa-envelope"></i> Envoyer par email
-            </button>
-            <div id="form-success" class="form-alert success" style="display:none;">
-              <i class="fas fa-check-circle"></i> Message envoyé ! Je vous contacte très bientôt.
-            </div>
-            <div id="form-error" class="form-alert error" style="display:none;">
-              <i class="fas fa-exclamation-circle"></i> Erreur lors de l'envoi. Contactez-moi sur WhatsApp.
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </section>
@@ -687,7 +636,6 @@
           <li><a href="#apropos">À propos</a></li>
           <li><a href="#boutique">Boutique</a></li>
           <li><a href="#temoignages">Témoignages</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -724,5 +672,21 @@
 
   <!-- Main JS -->
   <script src="js/script.js"></script>
+  <script>
+function envoyerMail(event) {
+    event.preventDefault();
+
+    const nom = document.getElementById("nom").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
+
+    const destinataire = "lamienyerevabe@gmail.com";
+
+    const sujet = `Demande: ${service} - ${nom}`;
+    const body = encodeURIComponent(message);
+
+    window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${body}`;
+}
+</script>
 </body>
 </html>
