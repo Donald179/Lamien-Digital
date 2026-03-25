@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug contact-v2.php</title>
+    <style>
+        body { font-family: monospace; background: #1e1e1e; color: #fff; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #2d2d2d; padding: 20px; border-radius: 8px; }
+        h1 { color: #4af; }
+        pre { background: #1a1a1a; padding: 15px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Test Direct contact-v2.php</h1>
+        <p>Envoi d'un formulaire directement à contact-v2.php...</p>
+        
+        <form method="POST" action="php/contact-v2.php" id="testForm">
+            <input type="hidden" name="nom" value="Test User">
+            <input type="hidden" name="telephone" value="+226 55 75 72 99">
+            <input type="hidden" name="email" value="test@example.com">
+            <input type="hidden" name="service" value="maintenance">
+            <input type="hidden" name="message" value="Ceci est un message de test pour vérifier contact-v2.php">
+            <button type="submit">Envoyer →</button>
+        </form>
+
+        <h2>Ou utilisez AJAX:</h2>
+        <button onclick="testAjax()">Tester via AJAX</button>
+
+        <h2>Réponse:</h2>
+        <pre id="response">En attente...</pre>
+    </div>
+
+    <script>
+        async function testAjax() {
+            const formData = new FormData();
+            formData.append('nom', 'Test AJAX User');
+            formData.append('telephone', '+226 55 75 72 99');
+            formData.append('email', 'ajax@test.com');
+            formData.append('service', 'reparation');
+            formData.append('message', 'Message de test via AJAX pour contact-v2.php');
+
+            try {
+                const response = await fetch('./php/contact-v2.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const text = await response.text();
+                console.log('Status:', response.status);
+                console.log('Content-Type:', response.headers.get('content-type'));
+                console.log('Body:', text);
+
+                document.getElementById('response').textContent = 
+                    'Status: ' + response.status + '\n' +
+                    'Content-Type: ' + response.headers.get('content-type') + '\n' +
+                    'Response:\n' + text;
+
+            } catch (err) {
+                document.getElementById('response').textContent = 'Erreur: ' + err.message;
+            }
+        }
+    </script>
+</body>
+</html>

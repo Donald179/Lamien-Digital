@@ -315,22 +315,33 @@ Envoyé depuis le formulaire de contact
         body: formData
       });
 
-      const result = await response.json();
+      // Lire la réponse brute
+      const responseText = await response.text();
+      console.log('Status:', response.status, 'Response:', responseText);
 
-      if (result.success) {
+      // Essayer de parser JSON
+      let result = {};
+      try {
+        result = JSON.parse(responseText);
+      } catch (e) {
+        console.error('Erreur JSON:', e);
+        throw new Error('Réponse non-JSON du serveur');
+      }
+
+      // Vérifier le succès
+      if (result.success === true) {
         successAlert.style.display = 'flex';
         contactForm.reset();
         // Scroll vers le message
         successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         errorAlert.style.display = 'flex';
+        console.error('Erreur du serveur:', result.message || result);
       }
 
     } catch (err) {
-      // En développement local sans serveur PHP : afficher un message d'info
-      console.log('Note: PHP server requis pour l\'envoi réel. Message simulé.');
-      successAlert.style.display = 'flex';
-      contactForm.reset();
+      console.error('Erreur fetch:', err.message);
+      errorAlert.style.display = 'flex';
     } finally {
       btnText.style.display    = 'inline-flex';
       btnLoading.style.display = 'none';
