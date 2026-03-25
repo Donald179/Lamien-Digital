@@ -1,0 +1,58 @@
+# ═══════════════════════════════════════════════════════════
+# TechBurk — .gitignore
+# ═══════════════════════════════════════════════════════════
+
+# 🔐 Fichiers sensibles
+php/config.local.php
+php/.env
+.env
+.env.local
+
+# 📝 Logs
+logs/
+*.log
+error.log
+
+# 🗄️ Base de données
+*.sql
+*.db
+*.sqlite
+database.local.sql
+
+# 🧪 Fichiers de test
+php/test_email.php
+test-*.php
+
+# 💾 Backups
+*.bak
+*.backup
+*~
+
+# 📦 Dépendances
+vendor/
+node_modules/
+composer.lock
+
+# 🛠️ IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# 🚀 Build
+dist/
+build/
+*.min.js
+*.min.css
+
+# 📁 OS
+.DS_Store
+$RECYCLE.BIN/
+
+# 🔧 Cache
+cache/
+temp/
+tmp/
+*.cache

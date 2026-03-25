@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO META TAGS -->
+  <title>TechBurk | Maintenance & Réparation Informatique au Burkina Faso</title>
+  <meta name="description" content="Expert en maintenance informatique, réparation d'ordinateurs, installation logiciels et vente de matériel informatique à Ouagadougou, Burkina Faso." />
+  <meta name="keywords" content="réparation ordinateur Burkina Faso, maintenance informatique Ouagadougou, installation logiciel, diagnostic informatique, vente ordinateur Burkina" />
+  <meta name="author" content="TechBurk" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TechBurk | Expert Informatique Burkina Faso" />
+  <meta property="og:description" content="Maintenance, réparation, installation et vente de matériel informatique au Burkina Faso." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://techburk.bf" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-icon"><i class="fas fa-laptop-code"></i></span>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar">
+    <div class="container nav-container">
+      <a href="#accueil" class="logo">
+        <span class="logo-icon"><i class="fas fa-microchip"></i></span>
+        <span>LAMIEN<strong>DIGITAL</strong></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#accueil" class="nav-link active">Accueil</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#apropos" class="nav-link">À propos</a>
+        <a href="#boutique" class="nav-link">Boutique</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://wa.me/22655757299?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20informatique" target="_blank" class="btn-nav-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="accueil" class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> Disponible · Bobo-Dioulasso & environs
+      </div>
+      <h1 class="hero-title">
+        Votre Expert<br />
+        <span class="gradient-text">Informatique</span><br />
+        au Burkina Faso
+      </h1>
+      <p class="hero-sub">
+        Maintenance, réparation, installation et vente de matériel informatique.
+        Des solutions rapides, fiables et accessibles pour particuliers et entreprises.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/22655757299?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20informatique" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Contacter sur WhatsApp
+        </a>
+        <a href="#services" class="btn btn-outline">
+          Voir mes services <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" data-count="150">
+          <span class="stat-num">0</span><span>+</span>
+          <p>Clients satisfaits</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat" data-count="4">
+          <span class="stat-num">0</span><span>+</span>
+          <p>Années d'expérience</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat" data-count="96">
+          <span class="stat-num">0</span><span>%</span>
+          <p>Taux de satisfaction</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Ce que je fais</span>
+        <h2>Mes <span class="gradient-text">Services</span></h2>
+        <p>Des solutions informatiques complètes adaptées à vos besoins</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card" data-aos data-delay="100">
+          <div class="service-icon-wrap">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Maintenance Informatique</h3>
+          <p>Entretien préventif et correctif de vos équipements pour garantir leur performance optimale et prolonger leur durée de vie.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Nettoyage physique & logiciel</li>
+            <li><i class="fas fa-check"></i> Mise à jour système</li>
+            <li><i class="fas fa-check"></i> Optimisation des performances</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander ce service <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card featured" data-aos data-delay="200">
+          <div class="featured-badge">Populaire</div>
+          <div class="service-icon-wrap">
+            <i class="fas fa-laptop-medical"></i>
+          </div>
+          <h3>Réparation d'Ordinateurs</h3>
+          <p>Diagnostic et réparation rapide de tous types de pannes matérielles et logicielles, pour PC et laptops.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Remplacement d'écran & clavier</li>
+            <li><i class="fas fa-check"></i> Récupération de données</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander ce service <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos data-delay="300">
+          <div class="service-icon-wrap">
+            <i class="fas fa-download"></i>
+          </div>
+          <h3>Installation Systèmes & Logiciels</h3>
+          <p>Installation et configuration de systèmes d'exploitation, logiciels professionnels et outils de productivité.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Windows, Linux</li>
+            <li><i class="fas fa-check"></i> Suite Office, antivirus</li>
+            <li><i class="fas fa-check"></i> Logiciels métiers</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander ce service <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos data-delay="100">
+          <div class="service-icon-wrap">
+            <i class="fas fa-store"></i>
+          </div>
+          <h3>Vente de Matériel</h3>
+          <p>Vente d'ordinateurs neufs et reconditionnés, accessoires et pièces détachées à des prix compétitifs.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> PC & Laptops</li>
+            <li><i class="fas fa-check"></i> Accessoires & périphériques</li>
+            <li><i class="fas fa-check"></i> Pièces détachées</li>
+          </ul>
+          <a href="#boutique" class="service-link">Voir la boutique <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos data-delay="200">
+          <div class="service-icon-wrap">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <h3>Diagnostic Informatique</h3>
+          <p>Analyse complète de vos équipements en ligne ou en présentiel pour identifier et résoudre tout problème.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Diagnostic à distance</li>
+            <li><i class="fas fa-check"></i> Déplacement à domicile</li>
+            <li><i class="fas fa-check"></i> Rapport détaillé</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander ce service <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos data-delay="300">
+          <div class="service-icon-wrap">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3>Réseau & Sécurité</h3>
+          <p>Installation et configuration de réseaux Wi-Fi, partage internet, et protection de vos données sensibles.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Configuration de systeme de protection de donnees</li>
+            <li><i class="fas fa-check"></i> Protection antivirus</li>
+            <li><i class="fas fa-check"></i> Sauvegarde de données</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander ce service <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POURQUOI ME CHOISIR ===================== -->
+  <section id="pourquoi" class="section why-us">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Mes atouts</span>
+        <h2>Pourquoi me <span class="gradient-text">choisir ?</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" data-aos data-delay="100">
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <h4>Intervention Rapide</h4>
+          <p>Réponse en moins de 2h et intervention le jour même pour les urgences.</p>
+        </div>
+        <div class="why-card" data-aos data-delay="150">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>Service Garanti</h4>
+          <p>Garantie sur toutes les réparations. Votre satisfaction est ma priorité.</p>
+        </div>
+        <div class="why-card" data-aos data-delay="200">
+          <div class="why-icon"><i class="fas fa-tags"></i></div>
+          <h4>Prix Accessibles</h4>
+          <p>Tarifs transparents et adaptés au marché local burkinabè.</p>
+        </div>
+        <div class="why-card" data-aos data-delay="250">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h4>Support 7j/7</h4>
+          <p>Disponible 7 jours sur 7 via WhatsApp, téléphone ou en présentiel.</p>
+        </div>
+        <div class="why-card" data-aos data-delay="300">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <h4>Expertise Certifiée</h4>
+          <p>Technicien qualifié avec 4+ ans d'expérience en maintenance informatique.</p>
+        </div>
+        <div class="why-card" data-aos data-delay="350">
+          <div class="why-icon"><i class="fas fa-home"></i></div>
+          <h4>Déplacement à Domicile</h4>
+          <p>Je viens chez vous ou dans votre entreprise pour plus de commodité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== À PROPOS ===================== -->
+  <section id="apropos" class="section about">
+    <div class="container about-container">
+      <div class="about-visual" data-aos>
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="about-badge-float">
+            <i class="fas fa-star"></i>
+            <span>Expert<br/>Certifié</span>
+          </div>
+        </div>
+        <div class="about-skills">
+          <div class="skill-bar-item">
+            <span>Réparation Hardware</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            <span>95%</span>
+          </div>
+          <div class="skill-bar-item">
+            <span>Installation Logiciels</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+            <span>98%</span>
+          </div>
+          <div class="skill-bar-item">
+            <span>Réseau & Sécurité</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            <span>88%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content" data-aos data-delay="200">
+        <span class="section-tag">À propos</span>
+        <h2>Votre technicien de<br/><span class="gradient-text">confiance</span></h2>
+        <p class="about-lead">
+          Passionné d'informatique depuis plus de 5 ans, je mets mon expertise au service
+          des particuliers et entreprises du Burkina Faso pour des solutions numériques fiables.
+        </p>
+        <p>
+          Basé à Bobo-Dioulasso, j'interviens rapidement sur site ou à distance pour tous vos
+          problèmes informatiques. Mon objectif : vous fournir un service de qualité professionnelle
+          à un prix juste et accessible.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bobo-Dioulasso, Burkina Faso</span>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-clock"></i>
+            <span>Disponible 7j/7 · 8h–20h</span>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-language"></i>
+            <span>Français, Mooré, Dioula, Anglais</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Me contacter <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TÉMOIGNAGES ===================== -->
+  <section id="temoignages" class="section testimonials">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Ce qu'ils disent</span>
+        <h2>Témoignages <span class="gradient-text">clients</span></h2>
+      </div>
+      <div class="testi-grid">
+
+        <div class="testi-card" data-aos data-delay="100">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Mon ordinateur était complètement bloqué. En moins de 2 heures, tout était réglé. Service rapide et professionnel !"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AK</div>
+            <div>
+              <strong>Aminata K.</strong>
+              <span>Particulière, Ouagadougou</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-aos data-delay="300">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"Récupération de mes données après une panne disque dur. J'avais perdu espoir mais il a tout récupéré. Merci mille fois !"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <strong>Salimata R.</strong>
+              <span>Étudiante, Université</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BOUTIQUE ===================== -->
+  <section id="boutique" class="section shop">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Matériel disponible</span>
+        <h2>Notre <span class="gradient-text">Boutique</span></h2>
+        <p>Ordinateurs, accessoires et pièces — neufs et reconditionnés</p>
+      </div>
+
+      <div class="shop-filters" data-aos>
+        <button class="filter-btn active" data-filter="all">Tout</button>
+        <button class="filter-btn" data-filter="laptop">Laptops</button>
+        <button class="filter-btn" data-filter="desktop">Desktops</button>
+        <button class="filter-btn" data-filter="accessoire">Accessoires</button>
+      </div>
+
+      <div class="shop-grid">
+
+        <div class="product-card" data-category="laptop" data-aos data-delay="100">
+          <img src="Dell.png" alt="Dell Latitude">
+            <span class="product-badge new">Destock</span>
+          <div class="product-info">
+            <h4>Ordinateur Portable Dell Latitude</h4>
+            <p>Intel Core i5 8eme generation, 8GB RAM, SSD 256GB, Windows 11</p>
+            <button class="btn-details">Voir détails</button>
+            <div class="product-details">
+              <ul>
+                <li>Processeur : Intel Core i5 8e génération</li>
+                <li>RAM : 8GB DDR4</li>
+                <li>Stockage : SSD 256GB</li>
+                <li>Écran : 14 pouces HD</li>
+                <li>Système : Windows 11</li>
+                <li>Batterie : 4-5h d'autonomie</li>
+              </ul>
+            </div>
+            <div class="product-footer">
+              <span class="price">150 000 <small>FCFA</small></span>
+              <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20Dell%20Latitude" target="_blank" class="btn-buy">
+                <i class="fab fa-whatsapp"></i> Acheter
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="laptop" data-aos data-delay="150">
+            <img src="Dell Lattitude.png" alt="Dell Latitude 5490">
+          <div class="product-info">
+            <h4>Laptop Dell Latitude 5490</h4>
+            <p>Intel Core i7, 16GB RAM, SSD 512GB, Windows 10</p>
+            <button class="btn-details">Voir détails</button>
+            <div class="product-details">
+              <ul>
+                <li>Processeur : Intel Core i7 7e génération</li>
+                <li>RAM : 16GB DDR4</li>
+                <li>Stockage : SSD 512GB</li>
+                <li>Écran : 14 pouces Full HD</li>
+                <li>Système : Windows 10 Pro</li>
+                <li>Batterie : 6-7h d'autonomie</li>
+              </ul>
+            </div>
+            <div class="product-footer">
+              <span class="price">275 000 <small>FCFA</small></span>
+              <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20Dell%20Latitude%205490" target="_blank" class="btn-buy">
+                <i class="fab fa-whatsapp"></i> Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+<div class="product-card" data-category="desktop" data-aos data-delay="200">
+  <img src="HP EliteBook.png" alt="HP EliteBook 840">
+  <span class="product-badge new">Neuf</span>
+
+  <div class="product-info">
+    <h4>Ordinateur HP EliteBook 840</h4>
+    <p>Intel Core i5, 8GB RAM, HDD 1TB, Windows 11</p>
+
+    <!-- Bouton détail -->
+    <button class="btn-details">Voir détails</button>
+
+    <!-- Section cachée -->
+    <div class="product-details">
+      <ul>
+        <li>Processeur : Intel Core i5</li>
+        <li>RAM : 8GB</li>
+        <li>Stockage : 1TB HDD</li>
+        <li>Système : Windows 11</li>
+        <li>Autonomie : 5h</li>
+      </ul>
+    </div>
+
+    <div class="product-footer">
+      <span class="price">160 000 <small>FCFA</small></span>
+      <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20PC%20HP%20EliteBook%20840" target="_blank" class="btn-buy">
+        <i class="fab fa-whatsapp"></i> Commander
+      </a>
+    </div>
+  </div>
+</div>
+
+        <div class="product-card" data-category="accessoire" data-aos data-delay="250">
+            <img src="Disque dur.jpg" alt="">
+          <div class="product-info">
+            <h4>Disque dur Interne 512GB SSD</h4>
+            <p>Disque dur SSD interne de 512GB, idéal pour améliorer les performances de votre ordinateur</p>
+            <button class="btn-details">Voir détails</button>
+            <div class="product-details">
+              <ul>
+                <li>Capacité : 512GB</li>
+                <li>Type : SSD M.2 NVMe</li>
+                <li>Vitesse : jusqu'à 3500 MB/s</li>
+                <li>Interface : PCIe 3.0</li>
+                <li>Garantie : 3 ans</li>
+                <li>Compatible : Tous les ordinateurs récents</li>
+              </ul>
+            </div>
+            <div class="product-footer">
+              <span class="price">35 000 <small>FCFA</small></span>
+              <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20Disque%20Dur%20Interne" target="_blank" class="btn-buy">
+                <i class="fab fa-whatsapp"></i> Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="accessoire" data-aos data-delay="300">
+          <img src="Support d'ordinateur portable avec ventilateur de refroidissement, support en alliage d'aluminium.jpg" alt="">
+          <div class="product-info">
+            <h4>Support d'Ordinateur avec ventilateur</h4>
+            <p>Compatible avec les ordinateurs portables</p>
+            <button class="btn-details">Voir détails</button>
+            <div class="product-details">
+              <ul>
+                <li>Convertible, réglable</li>
+                <li>Matériau : Aluminium</li>
+                <li>Ventilation améliorée</li>
+                <li>Support jusqu'à 15kg</li>
+              </ul>
+            </div>
+            <div class="product-footer">
+              <span class="price">15 000 <small>FCFA</small></span>
+              <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20Support%20d'Ordinateur" target="_blank" class="btn-buy">
+                <i class="fab fa-whatsapp"></i> Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="accessoire" data-aos data-delay="350">
+          <img src="Disque dur externe.jpg" alt="">
+          <div class="product-info">
+            <h4>Disque Dur Externe 1TB</h4>
+            <p>USB 3.0, compatible PC & Mac, idéal pour sauvegarde</p>
+            <button class="btn-details">Voir détails</button>
+            <div class="product-details">
+              <ul>
+                <li>Capacité : 1TB (1000GB)</li>
+                <li>Interface : USB 3.0</li>
+                <li>Vitesse : jusqu'à 400 MB/s</li>
+                <li>Compatible : Windows, Mac, Linux</li>
+                <li>Alimentation : USB (aucune batterie)</li>
+                <li>Garantie : 2 ans constructeur</li>
+              </ul>
+            </div>
+            <div class="product-footer">
+              <span class="price">35 000 <small>FCFA</small></span>
+              <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20suis%20intéressé%20par%20le%20Disque%20Dur%20Externe" target="_blank" class="btn-buy">
+                <i class="fab fa-whatsapp"></i> Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="shop-cta" data-aos>
+        <p>Vous cherchez un produit spécifique ?</p>
+        <a href="https://wa.me/22655757299?text=Bonjour%2C%20je%20cherche%20un%20produit%20spécifique" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Demander sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Parlons-en</span>
+        <h2>Me <span class="gradient-text">Contacter</span></h2>
+        <p>Décrivez votre problème, je vous réponds dans les plus brefs délais</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Info Cards -->
+        <div class="contact-info" data-aos>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/22655757299" target="_blank">+226 55 75 72 99</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Téléphone</h4>
+              <a href="tel:+22655757299">+226 55 75 72 99</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:lamiendonaldo179@gmail.com">lamiendonaldo179@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Localisation</h4>
+              <span>Bobo-Dioulasso, Burkina Faso</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Horaires</h4>
+              <span>Lun–Sam : 8h00 – 20h00</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/22655757299?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20informatique" target="_blank" class="btn btn-whatsapp btn-full">
+            <i class="fab fa-whatsapp"></i> Discuter maintenant
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap" data-aos data-delay="200">
+          <form id="contactForm" action="php/contact.php" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom">Votre nom *</label>
+                <input type="text" id="nom" name="nom" placeholder="Ex : Moussa Traoré" required />
+              </div>
+              <div class="form-group">
+                <label for="telephone">Téléphone *</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="+226 XX XX XX XX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email (optionnel)</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service souhaité *</label>
+              <select id="service" name="service" required>
+                <option value="">-- Choisir un service --</option>
+                <option value="maintenance">Maintenance informatique</option>
+                <option value="reparation">Réparation d'ordinateur</option>
+                <option value="installation">Installation logiciel/système</option>
+                <option value="vente">Achat matériel</option>
+                <option value="diagnostic">Diagnostic informatique</option>
+                <option value="reseau">Réseau & Sécurité</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Décrivez votre problème *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre problème ou ce dont vous avez besoin..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le message</span>
+              <span class="btn-loading" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i> Envoi...</span>
+            </button>
+            <div id="form-success" class="form-alert success" style="display:none;">
+              <i class="fas fa-check-circle"></i> Message envoyé ! Je vous contacte très bientôt.
+            </div>
+            <div id="form-error" class="form-alert error" style="display:none;">
+              <i class="fas fa-exclamation-circle"></i> Erreur lors de l'envoi. Contactez-moi sur WhatsApp.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#accueil" class="logo">
+          <span class="logo-icon"><i class="fas fa-microchip"></i></span>
+          <span>Tech<strong>Burk</strong></span>
+        </a>
+        <p>Votre expert informatique de confiance au Burkina Faso. Service rapide, fiable et accessible.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/22655757299" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:+22655757299" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+          <a href="mailto:lamiendonaldo179@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Maintenance informatique</a></li>
+          <li><a href="#services">Réparation d'ordinateurs</a></li>
+          <li><a href="#services">Installation logiciels</a></li>
+          <li><a href="#services">Diagnostic informatique</a></li>
+          <li><a href="#services">Réseau & Sécurité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Liens rapides</h5>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#boutique">Boutique</a></li>
+          <li><a href="#temoignages">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact direct</h5>
+        <ul class="footer-contact-list">
+          <li><i class="fab fa-whatsapp"></i> +226 55 75 72 99</li>
+          <li><i class="fas fa-phone"></i> +226 55 75 72 99</li>
+          <li><i class="fas fa-envelope"></i> lamiendonaldo179@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Bobo-Dioulasso, Burkina Faso</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="currentYear"></span> TechBurk. Tous droits réservés. | Fait avec <i class="fas fa-heart" style="color:#e84118"></i> au Burkina Faso</p>
+        <p>Maintenance informatique · Réparation · Installation · Vente · Ouagadougou</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP FLOATING BTN ===================== -->
+  <a href="https://wa.me/22655757299?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20informatique"
+     target="_blank" class="whatsapp-float" id="waFloat" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Besoin d'aide ?</span>
+  </a>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
