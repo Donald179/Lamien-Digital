@@ -2,11 +2,14 @@
 # TechBurk — .gitignore
 # ═══════════════════════════════════════════════════════════
 
-# 🔐 Fichiers sensibles
+# 🔐 Fichiers sensibles (identifiants, mots de passe)
+php/config.php
 php/config.local.php
 php/.env
 .env
 .env.local
+*.key
+*.pem
 
 # 📝 Logs
 logs/
