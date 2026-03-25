@@ -159,7 +159,7 @@
 
             try {
                 const formData = new FormData(form);
-                const response = await fetch('../php/contact.php', {
+                const response = await fetch('./php/contact-v2.php', {
                     method: 'POST',
                     body: formData
                 });
