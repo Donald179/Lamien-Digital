@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Formulaire Contact — TechBurk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container { max-width: 500px; width: 100%; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        h1 { color: #333; margin-bottom: 10px; font-size: 24px; }
+        .subtitle { color: #666; margin-bottom: 30px; font-size: 14px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px; }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        textarea { resize: vertical; min-height: 120px; }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 14px;
+        }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4); }
+        button:active { transform: translateY(0); }
+        .alert {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+        }
+        .alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block; }
+        .alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; }
+        .loading { display: none; text-align: center; }
+        .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .info-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #333;
+        }
+        .info-box strong { color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>📬 Test Formulaire Contact</h1>
+            <p class="subtitle">Formulaire de test pour TechBurk</p>
+
+            <div class="info-box">
+                <strong>ℹ️ Note:</strong> Ce formulaire teste directement votre système de contact.
+            </div>
+
+            <div id="successAlert" class="alert success">
+                <i class="fas fa-check-circle"></i> Message envoyé avec succès!
+            </div>
+            <div id="errorAlert" class="alert error">
+                <i class="fas fa-exclamation-circle"></i> <span id="errorText"></span>
+            </div>
+
+            <form id="testForm">
+                <div class="form-group">
+                    <label for="nom">Votre Nom *</label>
+                    <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required value="Test User">
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+226 XX XX XX XX" required value="+226 55 75 72 99">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (optionnel)</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" value="test@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Choisir un service --</option>
+                        <option value="maintenance" selected>Maintenance informatique</option>
+                        <option value="reparation">Réparation d'ordinateur</option>
+                        <option value="installation">Installation logiciel/système</option>
+                        <option value="vente">Achat matériel</option>
+                        <option value="diagnostic">Diagnostic informatique</option>
+                        <option value="reseau">Réseau & Sécurité</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Décrivez votre problème..." required>Ceci est un message de test pour vérifier que le formulaire fonctionne correctement.</textarea>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le test</span>
+                    <span class="loading">
+                        <span class="spinner"></span> Envoi en cours...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('testForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successAlert = document.getElementById('successAlert');
+        const errorAlert = document.getElementById('errorAlert');
+        const errorText = document.getElementById('errorText');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Show loading
+            submitBtn.querySelector('.btn-text').style.display = 'none';
+            submitBtn.querySelector('.loading').style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('../php/contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    successAlert.style.display = 'block';
+                    errorAlert.style.display = 'none';
+                    form.reset();
+                    console.log('Message ID:', result.messageId);
+                } else {
+                    errorText.textContent = result.message || 'Une erreur est survenue';
+                    errorAlert.style.display = 'block';
+                    successAlert.style.display = 'none';
+                    console.error('Erreurs:', result.errors || result.message);
+                }
+            } catch (err) {
+                errorText.textContent = 'Erreur réseau: ' + err.message;
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.error('Erreur:', err);
+            } finally {
+                submitBtn.querySelector('.btn-text').style.display = 'inline-flex';
+                submitBtn.querySelector('.loading').style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
