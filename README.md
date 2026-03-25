@@ -13,8 +13,10 @@ techburk/
 ├── js/
 │   └── script.js           ← Animations & interactions JS
 ├── php/
-│   └── contact.php         ← Backend formulaire de contact
+│   ├── contact.php         ← Backend formulaire de contact
+│   └── mailer.php          ← Système d'envoi d'emails
 ├── database.sql            ← Script SQL (base de données)
+├── EMAIL_CONFIG.md         ← Guide configuration emails
 └── README.md               ← Ce fichier
 ```
 
@@ -42,6 +44,7 @@ C:\xampp\htdocs\techburk\
 ├── css\style.css
 ├── js\script.js
 ├── php\contact.php
+├── php\mailer.php
 └── database.sql
 ```
 
@@ -57,7 +60,6 @@ C:\xampp\htdocs\techburk\
 ✅ La base de données `techburk_db` sera créée automatiquement avec :
 - Toutes les tables
 - Les données d'exemple
-- Les procédures stockées
 
 ---
 
@@ -69,6 +71,7 @@ define('DB_HOST', 'localhost');   // Laisser localhost
 define('DB_NAME', 'techburk_db'); // Nom de la BDD
 define('DB_USER', 'root');         // Utilisateur XAMPP (root par défaut)
 define('DB_PASS', '');             // Mot de passe (vide par défaut sur XAMPP)
+define('ADMIN_EMAIL', 'lamiendonaldo179@gmail.com'); // Votre email
 ```
 
 ---
@@ -77,32 +80,40 @@ define('DB_PASS', '');             // Mot de passe (vide par défaut sur XAMPP)
 1. Ouvrir le navigateur
 2. Aller sur : **`http://localhost/techburk/`**
 3. Le site doit s'afficher correctement ✅
+4. **Tester l'email** : accéder à `http://localhost/techburk/php/test_email.php`
+
+---
+
+## 📧 Système d'emails
+
+Le formulaire de contact envoie automatiquement les messages à : **lamiendonaldo179@gmail.com**
+
+✅ Fonctionnalités :
+- Validation des données (nom, téléphone, email, message)
+- Enregistrement en base de données
+- Envoi d'email automatique à l'admin
+- Logging de tous les emails
+- Classe Mailer réutilisable
+
+📝 Pour plus de détails, voir : [EMAIL_CONFIG.md](EMAIL_CONFIG.md)
 
 ---
 
 ## 📱 Personnalisation obligatoire
 
 ### 1. Numéro WhatsApp
-Remplacer `22600000000` par votre vrai numéro dans :
+Remplacer `22655757299` par votre vrai numéro dans :
 - `index.html` (tous les liens `wa.me/226XXXXXXXX`)
-- Chercher : `22600000000` et remplacer par votre numéro
 
 ### 2. Email
-Remplacer `contact@techburk.bf` par votre email réel dans :
-- `index.html`
+Remplacer `lamiendonaldo179@gmail.com` par votre email réel dans :
+- `index.html` (section contact)
 - `php/contact.php` → `define('ADMIN_EMAIL', 'votre@email.com');`
 
 ### 3. Nom de l'entreprise
-Remplacer `TechBurk` par votre vrai nom dans :
+Remplacer `TechBurk` / `LAMIEN DIGITAL` par votre vrai nom dans :
 - `index.html` (balise `<title>`, logo, footer)
 - `php/contact.php`
-
-### 4. Téléphone
-Remplacer `+226 00 00 00 00` par votre vrai numéro dans :
-- `index.html` (section contact & footer)
-
-### 5. Localisation
-Modifier votre adresse exacte dans la section contact.
 
 ---
 
@@ -126,10 +137,11 @@ Modifier votre adresse exacte dans la section contact.
 
 ## 🔒 Sécurité (avant mise en ligne)
 
-- [ ] Changer le mot de passe admin dans la table `admin_users`
+- [ ] Modifier l'email admin dans `php/contact.php`
 - [ ] Activer HTTPS sur votre hébergement
 - [ ] Modifier le mot de passe MySQL (pas root/vide en production)
-- [ ] Vérifier les permissions de fichiers (644 pour fichiers, 755 pour dossiers)
+- [ ] Supprimer `php/test_email.php` en production
+- [ ] Vérifier les permissions de fichiers
 
 ---
 
@@ -143,21 +155,16 @@ Modifier votre adresse exacte dans la section contact.
 | PHP 7.4+    | Backend formulaire |
 | MySQL 5.7+  | Base de données |
 | Font Awesome 6 | Icônes |
-| Google Fonts (Syne + Outfit) | Typographies |
+| Google Fonts | Typographies |
 
 ---
 
-## 📊 Voir les messages reçus
+## 🧪 Voir les messages reçus
 
 Dans phpMyAdmin, exécutez :
 ```sql
 USE techburk_db;
 SELECT * FROM messages_contact ORDER BY date_envoi DESC;
-```
-
-Pour voir les messages non lus :
-```sql
-SELECT * FROM v_messages_non_lus;
 ```
 
 ---
@@ -166,21 +173,23 @@ SELECT * FROM v_messages_non_lus;
 
 **Le formulaire ne fonctionne pas ?**
 → Vérifiez que Apache ET MySQL sont démarrés dans XAMPP
-→ Vérifiez l'URL dans le formulaire (doit pointer vers `php/contact.php`)
-
-**Page blanche après envoi ?**
-→ Activez l'affichage des erreurs PHP : `ini_set('display_errors', 1);` en début de `contact.php`
 
 **Erreur de connexion BDD ?**
 → Vérifiez les identifiants dans `php/contact.php`
-→ Assurez-vous que la base `techburk_db` existe dans phpMyAdmin
+
+**Les emails ne s'envoient pas ?**
+→ Consultez `php/test_email.php` et [EMAIL_CONFIG.md](EMAIL_CONFIG.md)
 
 ---
 
 ## 📞 Support
 
-Pour toute question sur ce projet, consultez la documentation XAMPP ou PHP officielle.
+Pour toute question sur ce projet, consultez :
+- [EMAIL_CONFIG.md](EMAIL_CONFIG.md) - Configuration emails
+- Documentation XAMPP officielle
+- Documentation PHP officielle
 
 ---
 
-*TechBurk — Fait avec ❤️ pour les entrepreneurs Burkinabè*
+*🚀 TechBurk — Expert Informatique Burkina Faso*  
+*Fait avec ❤️ pour les entrepreneurs Burkinabè*
